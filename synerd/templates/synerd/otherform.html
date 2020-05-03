@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Join Us</title>
+	<link rel="stylesheet" href="{% static 'synerd/home.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'synerd/index.js' %}" defer></script>
+</head>
+<body>
+	
+  <div class="wrapper">
+   <div class="topNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li id="divider">|</li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="mainNav">
+    <ul>
+      <li><div class="logo"><a href="{% url 'home' %}" class="logo"><img src="{% static 'synerd/svg/Logo.svg' %}" alt="SynerD logo"></a></div></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="{% url 'members' %}">Members</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><button id="donateButton">Donate</button></li>
+      <li><div class="search_bar">
+        <input type="text" placeholder="Search"><button type="submit" id="searchButton"><img src="{% static 'synerd/svg/search.svg' %}" alt="search button"></button>
+      </div></li>
+    </ul>
+  </div>
+  <div class="bottomNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="{% url 'signin' %}">Sign In</a></li>
+        <li id="divider">|</li>
+        <li><a href="{% url 'form' %}">Join Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="joinUs">
+    <h1>Dashboard</h1>
+  </div>
+
+    <div class="dashNav">
+      <li><a href="#">Office</a></li>
+      <li><a href="#">Officer</a></li>
+      <li><a href="#">Organization</a></li>
+      <li><a href="#">Organization Member</a></li>
+      <li><a href="#">Subscriber</a></li>
+    </div>
+
+
+
+<div class="row">
+  <div class="column">
+    <h2>Office</h2>
+    <table id="test">
+        <tr>
+        <tr><td><br></td></tr>
+          <td>Office Name</td><td><input type="text" id="OfficeName" /></td></tr>
+
+          <tr><td>Office Code</td><td><input type="text" id="OfficeCode"/></td></tr>
+
+          <tr><td>Attribution</td><td><input type="text" id="Attribution" /></td></tr>
+      <tr><td><br></td></tr>
+      </tr>
+    </table>
+  </div>
+  <div class="column">
+    <h2>Officer</h2>
+    <table id="test">
+        <tr>
+        <tr><td><br></td></tr>
+          <td>Subscriber ID</td><td><input type="text" id="OfficeName" /></td></tr>
+
+          <tr><td>Office Code</td><td><input type="text" id="OfficeCode"/></td></tr>
+
+          <tr><td>Start Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>End Date</td><td><input type="text" id="Attribution" /></td></tr>
+      <tr><td><br></td></tr>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <h2>Organization</h2>
+    <table id="test">
+        <tr>
+        <tr><td><br></td></tr>
+          <td>Org Code</td><td><input type="text" id="OfficeName" /></td></tr>
+
+          <tr><td>Org Name</td><td><input type="text" id="OfficeCode"/></td></tr>
+
+          <tr><td>Description</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Date Joined</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Address 1</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Address 2</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>City</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>State</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Zip Code</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Phone Number</td><td><input type="text" id="Attribution" /></td></tr>
+
+      <tr><td><br></td></tr>
+      </tr>
+    </table>
+  </div>
+  <div class="column">
+    <h2>Organization Member</h2>
+    <table id="test">
+        <tr>
+        <tr><td><br></td></tr>
+          <td>Org Code</td><td><input type="text" id="OfficeName" /></td></tr>
+
+          <tr><td>Subscriber ID</td><td><input type="text" id="OfficeCode"/></td></tr>
+
+          <tr><td>Start Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>End Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Native Country</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Citizenship</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Delegate</td><td><input type="text" id="Attribution" /></td></tr>
+      <tr><td><br></td></tr>
+      </tr>
+    </table>
+  </div>
+</div>
+ <div class="joinForm" id="formSheet">
+    <form method="get">
+      <table id="test">
+        <tr>
+        <tr><td><br></td></tr>
+          <tr><td><h2> Subscriber </h2></td></tr>
+          
+          <td>Subscriber ID</td><td><input type="text" id="OfficeName" /></td></tr>
+
+          <tr><td>Service Code</td><td><input type="text" id="OfficeCode"/></td></tr>
+
+          <tr><td>Request Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Start Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>End Date</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Motif of Cancellation</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Subscription Type</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Username</td><td><input type="text" id="Attribution" /></td></tr>
+
+          <tr><td>Beneficiary ID</td><td><input type="text" id="Attribution" /></td></tr>
+
+      <tr><td><br></td></tr>
+      <tr><td colspan="2" align="center"><input class="finishButton" type="button" value="Finish" onclick="getInputValues()" /></td></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<br><br>
+<div class="mainNav">
+  <ul>
+    <li><div class="logo"><a href="{% url 'home' %}"><strong>Synder D</strong></a></div></li>
+    <li><a href="#">Get Involved</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Ways to Give</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Revenues</a></li>
+    <li><a href="#">Expenditures</a></li>
+  </ul>
+</div>
+<div class="bottomInfo">
+  <ul>
+    <li><a href="#">Address</a></li>
+    <li><a href="#">Phone</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">Website</a></li>
+  </ul>
+</div>
+<div class="bottomNav">
+  <div class="right">
+    <ul>
+      <li><a href="#">Site Map</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Copyright @ 2020</a></li>
+    </ul>
+  </div>
+</div>
+
+</body></html>

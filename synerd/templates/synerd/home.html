@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Syner D</title>
+  <link rel="stylesheet" href="{% static 'synerd/home.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  
+  <div class="wrapper">
+   <div class="topNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li id="divider">|</li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="mainNav">
+    <ul>
+      <li><div class="logo"><a href="{% url 'home' %}" class="logo"><img src="{% static 'synerd/svg/Logo.svg' %}" alt="SynerD logo"></a></div></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="{% url 'members' %}">Members</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><button id="donateButton">Donate</button></li>
+      <li><div class="search_bar">
+        <input type="text" placeholder="Search"><button type="submit" id="searchButton"><img src="{% static 'synerd/svg/search.svg' %}" alt="search button">
+        </div></li>
+      </ul>
+    </div>
+    <div class="bottomNav">
+      <div class="left">
+        <ul>
+          <p>  </p>
+        </ul>
+      </div> 
+      <div class="right">
+        <ul>
+          <li><a href="{% url 'signin' %}">Sign In</a></li>
+          <li id="divider">|</li>
+          <li><a href="{% url 'form' %}">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- slideshow -->
+
+    <div class="carousel">
+      <button class="carouselButton carouselButtonLeft isHidden"><img src="{% static 'synerd/svg/leftbutton.svg' %}" alt="left"></button>
+      <div class="carouselTrackContainer">
+        <ul class="carouselTrack">
+          <li class="carouselSlide currentSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/cham1.jpg' %}" alt="">
+          </li>
+          <li class="carouselSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/khmer.jpg' %}" alt="">
+          </li>
+          <li class="carouselSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/cham2.jpg' %}" alt="">
+          </li>
+          <li class="carouselSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/syria.jpg' %}" alt="">
+          </li>
+          <li class="carouselSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/khmer2.jpg' %}" alt="">
+          </li>
+          <li class="carouselSlide">
+            <img class="carouselImage" src="{% static 'synerd/images/navajo.jpg' %}" alt="">
+          </li>
+        </ul>
+      </div>
+      <button class="carouselButton carouselButtonRight"><img src="{% static 'synerd/svg/rightbutton.svg' %}" alt="right"></button>
+    </div>
+
+    <div class="carouselNav">
+      <button class="carouselIndicator  currentSlide"></button>
+      <button class="carouselIndicator"></button>
+      <button class="carouselIndicator"></button>
+      <button class="carouselIndicator"></button>
+      <button class="carouselIndicator"></button>
+      <button class="carouselIndicator"></button>
+    </div>
+
+    <script src="{% static 'synerd/index.js' %}" defer></script>
+
+    <!-- icons -->
+    <div class="iconNav">
+      <button class="buttonIcon  currentIcon" id="new">What's New</button>
+      <button class="buttonIcon" id="protect">ID Protection</button>
+      <button class="buttonIcon" id="corpse">Corpses Repatriation</button>
+      <button class="buttonIcon" id="assist">Assistance Programs</button>
+    </div>
+
+    <img class="motto" src="svg/motto.svg" alt="">
+
+    <div class="mainNav">
+      <ul>
+        <li><div class="logo"><a href="{% url 'home' %}"><strong>Synder D</strong></a></div></li>
+        <li><a href="#">Get Involved</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Ways to Give</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Revenues</a></li>
+        <li><a href="#">Expenditures</a></li>
+      </ul>
+    </div>
+    <div class="bottomInfo">
+      <ul>
+        <li><a href="#">Address</a></li>
+        <li><a href="#">Phone</a></li>
+        <li><a href="#">Email</a></li>
+        <li><a href="#">Website</a></li>
+      </ul>
+    </div>
+        <div class="bottomNav">
+      <div class="right">
+        <ul>
+          <li><a href="#">Site Map</a></li>
+          <li id="divider">|</li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li id="divider">|</li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li id="divider">|</li>
+          <li><a href="#">Copyright @ 2020</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+  </html>

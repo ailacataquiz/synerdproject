@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Join Us</title>
+	<link rel="stylesheet" href="{% static 'synerd/home.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'synerd/index.js' %}" defer></script>
+</head>
+<body>
+	
+  <div class="wrapper">
+   <div class="topNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li id="divider">|</li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="mainNav">
+    <ul>
+      <li><div class="logo"><a href="{% url 'home' %}" class="logo"><img src="{% static 'synerd/svg/Logo.svg' %}" alt="SynerD logo"></a></div></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="{% url 'members' %}">Members</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><button id="donateButton">Donate</button></li>
+      <li><div class="search_bar">
+        <input type="text" placeholder="Search"><button type="submit" id="searchButton"><img src="{% static 'synerd/svg/search.svg' %}" alt="search button"></button>
+      </div></li>
+    </ul>
+  </div>
+  <div class="bottomNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="{% url 'signin' %}">Sign In</a></li>
+        <li id="divider">|</li>
+        <li><a href="{% url 'form' %}">Join Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="joinUs">
+    <h1>Sign In</h1>
+  </div>
+
+  <div class="joinForm" id="formSheet">
+    <form method="get">
+      <table id="test">
+        <tr >
+          <td>Username</td><td><input type="text" id="username" /></td></tr>
+
+          <tr><td>Password</td><td><input type="password" id="password"/></td></tr>
+
+      <tr><td><br></td></tr>
+      <tr><td colspan="2" align="center"><input class="finishButton" type="button" value="Sign In" onclick="getInputValues()" /></td></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div class="joinForm">
+  <table>
+    <tr>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+        <div id="member_search">
+        <input type="text" placeholder="Search"><button type="submit" id="searchButton"><img src="{% static 'synerd/svg/search.svg' %}" alt="search button"></button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Subscriber ID</th>
+      <th>Username</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    {% for item in query_subscriber %}
+    <tr>
+      <td>{{ item.subscriberID}}</td>
+      <td>{{ item.username }}</td>
+      <td>{{ item.username.firstName }}</td>
+      <td>{{ item.username.lastName }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+
+
+<br><br>
+<div class="mainNav">
+  <ul>
+    <li><div class="logo"><a href="{% url 'home' %}"><strong>Synder D</strong></a></div></li>
+    <li><a href="#">Get Involved</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Ways to Give</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Revenues</a></li>
+    <li><a href="#">Expenditures</a></li>
+  </ul>
+</div>
+<div class="bottomInfo">
+  <ul>
+    <li><a href="#">Address</a></li>
+    <li><a href="#">Phone</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">Website</a></li>
+  </ul>
+</div>
+<div class="bottomNav">
+  <div class="right">
+    <ul>
+      <li><a href="#">Site Map</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Copyright @ 2020</a></li>
+    </ul>
+  </div>
+</div>
+
+</body></html>

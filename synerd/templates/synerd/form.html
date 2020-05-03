@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Join Us</title>
+	<link rel="stylesheet" href="{% static 'synerd/home.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="{% static 'synerd/index.js' %}" defer></script>
+</head>
+<body>
+	
+  <div class="wrapper">
+   <div class="topNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li id="divider">|</li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="mainNav">
+    <ul>
+      <li><div class="logo"><a href="{% url 'home' %}" class="logo"><img src="{% static 'synerd/svg/Logo.svg' %}" alt="SynerD logo"></a></div></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="{% url 'members' %}">Members</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><button id="donateButton">Donate</button></li>
+      <li><div class="search_bar">
+        <input type="text" placeholder="Search"><button type="submit" id="searchButton"><img src="{% static 'synerd/svg/search.svg' %}" alt="search button"></button>
+      </div></li>
+    </ul>
+  </div>
+  <div class="bottomNav">
+    <div class="left">
+      <ul>
+        <p>  </p>
+      </ul>
+    </div> 
+    <div class="right">
+      <ul>
+        <li><a href="{% url 'signin' %}">Sign In</a></li>
+        <li id="divider">|</li>
+        <li><a href="{% url 'form' %}">Join Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="joinUs">
+    <h1>Join Us</h1>
+  </div>
+  <div class="joinForm" id="formSheet">
+    <form method="POST" action="{% url 'form' %}">
+      {% csrf_token %}
+      <table id="test">
+        <tr >
+          <td>Username</td><td>{{form.username}}</td></tr>
+
+          <tr><td>Password</td><td>{{form.password}}</td></tr>
+
+          <tr><td><br></td></tr>
+          <tr><td>First Name</td><td>{{form.firstname}}</td></tr>
+          <tr><td>Middle Name</td><td>{{form.middlename}}</td></tr>
+          <tr><td>Last Name</td><td>{{form.lastname}}</td></tr>
+
+        <tr><td><br></td></tr>
+        <tr><td>Street Address</td><td>{{form.address1}}</td></tr>
+        <tr><td>Apt/Unit#</td><td>{{form.address2}}</td></tr>
+        <tr><td>City</td><td>{{form.city}}</td></tr>
+        <tr><td>State:<td> {{form.state}}</td>
+      </td></tr>
+      <tr><td>Zip Code</td><td>{{form.zipcode}}</td></tr>
+
+      <tr><td><br></td></tr>
+      <tr><td>Email</td><td>{{form.email}}</td></tr>
+      <tr><td>Phone Number</td><td>{{form.phonenumber}}</td></tr>
+      <tr><td>Date of Birth</td><td>{{form.dob}}</td></tr>
+
+      <tr><td><br></td></tr>
+      <tr><td colspan="2" align="center"><input class="finishButton" type="submit"/></td></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div class="joinForm">
+  <table>
+
+    <tr id="results" hidden>
+      <td width="20%">
+      </td>
+      <td>
+        <table>
+          <td>Username: </td><td><span id="sUsername"></span></td></tr>
+
+          <tr><td>Password: </td><td><span id="sPassword"></span></td></tr>
+
+          <tr><td>First Name: </td><td><span id="sFname"></span></td></tr>
+
+          <tr><td>Middle Name: </td><td><span id="sMname"></span></td></tr>
+
+          <tr><td>Last Name: </td><td><span id="sLname"></span></td></tr>
+
+          <tr><td>Gender: </td><td><span id="sGender"></span></td></tr>
+
+          <td>Street Address: </td><td><span id="sAddress"></span></td></tr>
+
+          <tr><td>City: </td><td><span id="sCity"></span></td></tr>
+
+          <tr><td>State: </td><td><span id="sState"></span></td></tr>
+
+          <tr><td>Zip Code: </td><td><span id="sZipCode"></span></td></tr>
+
+          <tr><td>Email: </td><td><span id="sEmail"></span></td></tr>
+
+          <tr><td>Phone Number: </td><td><span id="sPhoneNumber"></span></td></tr>
+
+          <tr><td>Date of Birth: </td><td><span id="sDOB"></span></td></tr>
+
+          <tr><td>Member of Organization: </td><td><span id="sOrg"></span></td></tr>
+
+
+          <td align="center" colspan="3"></td>
+        </table>
+      </td>
+      <td width="40%" colspan="2"></td>
+    </tr>
+
+  </table>
+</div>
+<br><br>
+<div class="mainNav">
+  <ul>
+    <li><div class="logo"><a href="{% url 'home' %}"><strong>Synder D</strong></a></div></li>
+    <li><a href="#">Get Involved</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Ways to Give</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Revenues</a></li>
+    <li><a href="#">Expenditures</a></li>
+  </ul>
+</div>
+<div class="bottomInfo">
+  <ul>
+    <li><a href="#">Address</a></li>
+    <li><a href="#">Phone</a></li>
+    <li><a href="#">Email</a></li>
+    <li><a href="#">Website</a></li>
+  </ul>
+</div>
+<div class="bottomNav">
+  <div class="right">
+    <ul>
+      <li><a href="#">Site Map</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li id="divider">|</li>
+      <li><a href="#">Copyright @ 2020</a></li>
+    </ul>
+  </div>
+</div>
+
+</body></html>
